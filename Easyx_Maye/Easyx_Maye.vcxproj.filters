@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\commonutils">
+      <UniqueIdentifier>{6cd784be-ba6e-45fb-aac1-f404c32d8792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\commonutils">
+      <UniqueIdentifier>{896b99f4-1a82-4097-be7b-7b6294378428}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Configure.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LineEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pushButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Table.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BasicWidget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commonutils\Color.h">
+      <Filter>头文件\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commonutils\Font.h">
+      <Filter>头文件\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commonutils\Painter.h">
+      <Filter>头文件\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commonutils\TypeDefine.h">
+      <Filter>头文件\commonutils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\LineEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pushButton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Table.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BasicWidget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\commonutils\Color.cpp">
+      <Filter>源文件\commonutils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\commonutils\Font.cpp">
+      <Filter>源文件\commonutils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\commonutils\Painter.cpp">
+      <Filter>源文件\commonutils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
