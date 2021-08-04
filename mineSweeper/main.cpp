@@ -1,6 +1,7 @@
 ﻿#include<window.h>
 #include"controller.h"
 #pragma comment(lib,"Easyx_Maye.lib")
+
 int main()
 {
 	Window w(400,400,EW_SHOWCONSOLE);
