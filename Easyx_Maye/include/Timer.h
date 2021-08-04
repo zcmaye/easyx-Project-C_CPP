@@ -1,23 +1,47 @@
-#pragma once
-#include<ctime>
+ï»¿#pragma once
+#include<chrono>
+using namespace std::chrono;
+/*å®šæ—¶å™¨*/
 class Timer
 {
 public:
-	Timer(clock_t ms = 0);
+	Timer(int64_t ms = 0);
 	void startTimer();
-	bool timeOut();
-	void setTime(clock_t ms);
+	bool timeout();
+	void setTime(int64_t ms);
 	void killTimer();
 public:
-	//¾²Ì¬¶¨Ê±Æ÷
-	static bool startTimer(clock_t ms, int id);
-	//¶¨Ê±Æ÷µÄ×î´óID
+	//é™æ€å®šæ—¶å™¨
+	static bool startTimer(int64_t ms, int id);
+	//å®šæ—¶å™¨çš„æœ€å¤§ID
 	inline static size_t maxTimerID() { return 20; };
 private:
-	clock_t m_ms;	//ÑÓ³ÙºÁÃëÊı
-	clock_t m_startime;
-	clock_t m_endtime;
+    int64_t m_ms;	//å»¶è¿Ÿæ¯«ç§’æ•°
+	time_point<high_resolution_clock> m_startime;
+	time_point<high_resolution_clock> m_endtime;
 
-	bool m_threadIsRun;	//¿ØÖÆÏß³ÌÔËĞĞ
+	bool m_threadIsRun;	//æ§åˆ¶çº¿ç¨‹è¿è¡Œ
+};
+
+/*æ—¶é—´é—´éš”ï¼ˆè®¡ç®—è¿è¡Œæ—¶é—´ï¼‰*/
+class ElapsedTimer
+{
+public:
+    ElapsedTimer();
+    void reset();
+    //é»˜è®¤è¾“å‡ºæ¯«ç§’
+    int64_t elapsed() const;
+    //å¾®ç§’
+    int64_t elapsed_micro() const;
+    //çº³ç§’
+    int64_t elapsed_nano() const;
+    //ç§’
+    int64_t elapsed_seconds() const;
+    //åˆ†
+    int64_t elapsed_minutes() const;
+    //æ—¶
+    int64_t elapsed_hours() const;
+private:
+    time_point<high_resolution_clock> m_begin;
 };
 

@@ -98,14 +98,14 @@ void Table::drawTableGrid()
 	drawHeader();
 	setlinestyle(PS_SOLID, 1);
 	//表格横线
-	for (int i = 0; i < m_rows + 1; i++)
+	for (size_t i = 0; i < m_rows + 1; i++)
 	{
 		//m_x + m_cols * textw 表格的总宽度
 		int resy = m_y + m_gridh * i;
 		line(m_x, resy, m_x + m_cols * m_gridw, resy);
 	}
 	//表格竖线
-	for (int k = 0; k < m_cols+1; k++)
+	for (size_t k = 0; k < m_cols+1; k++)
 	{
 		line(m_x + k * m_gridw, m_y, m_x + k * m_gridw, m_y + m_gridh * m_rows);
 	}
@@ -141,7 +141,7 @@ void Table::drawTableText()
 	{
 		std::vector<std::string> line_data = split(m_datas[beg]);
 
-		for (int k = 0; k < line_data.size(); k++)
+		for (size_t k = 0; k < line_data.size(); k++)
 		{
 			int tx = m_x + k * m_gridw;
 			int ty = m_y + i * m_gridh;
@@ -156,7 +156,7 @@ void Table::drawHeader()
 	//绘制表头表格
 	setlinestyle(PS_SOLID, 2);
 	rectangle(m_x, m_y - 30, m_x + m_gridw * m_cols, m_y);
-	for (int i = 0; i < m_cols + 1; i++)
+	for (size_t i = 0; i < m_cols + 1; i++)
 	{
 		line(m_x + i * m_gridw, m_y - 30, m_x + i * m_gridw, m_y);
 	}
@@ -174,7 +174,7 @@ void Table::drawHeader()
 		}
 	}
 	int space = 0;
-	for (int i = 0; i < header.size(); i++)
+	for (size_t i = 0; i < header.size(); i++)
 	{
 		space = (m_gridw - textwidth(header[i].c_str())) / 2;	//居中显示表头，计算两边的间隔
 		outtextxy(m_x + i * m_gridw + space, m_y - m_gridh+5, header[i].c_str());

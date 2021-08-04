@@ -29,8 +29,8 @@ private:
 	void initPageBtnPos();
 
 private:
-	int m_rows;
-	int m_cols;
+	size_t m_rows;
+	size_t m_cols;
 
 	int m_gridw;
 	int m_gridh;
