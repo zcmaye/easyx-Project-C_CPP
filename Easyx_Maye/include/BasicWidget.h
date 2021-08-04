@@ -12,7 +12,6 @@ public:
 	int x()const;
 	int y()const;
 	void move(int x, int y);
-
 	
 	//未实现
 	void setBackgroundColor(const Color& color);

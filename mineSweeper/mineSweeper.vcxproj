@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e394c016-8c3c-4d35-a4bc-8fec4567a239}</ProjectGuid>
-    <RootNamespace>EasyxProject</RootNamespace>
+    <ProjectGuid>{61e2a3e8-c88d-4a30-8c81-30411fb7440e}</ProjectGuid>
+    <RootNamespace>mineSweeper</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,19 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../Easyx_Maye/include;$(IncludePath)</IncludePath>
+    <IncludePath>..\Easyx_Maye\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\Easyx_Maye\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../Easyx_Maye/include;$(IncludePath)</IncludePath>
-    <LibraryPath>../Easyx_Maye/lib/x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>../Easyx_Maye/lib/x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\Easyx_Maye\include;$(IncludePath)</IncludePath>
+    <ExecutablePath>..\Easyx_Maye\include;$(ExecutablePath)</ExecutablePath>
+    <LibraryPath>..\Easyx_Maye\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -95,7 +92,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,15 +144,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="controller.cpp" />
-    <ClCompile Include="gamer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="rollback.cpp" />
+    <ClCompile Include="map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
-    <ClInclude Include="gamer.h" />
     <ClInclude Include="map.h" />
-    <ClInclude Include="rollback.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

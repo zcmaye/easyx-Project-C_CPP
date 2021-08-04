@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include<BasicWidget.h>
 #include<vector>
 struct ExMessage;
@@ -10,14 +10,14 @@ public:
 	~CheckerBoard();
 	void show();
 	void eventLoop(const ExMessage&  msg);
-	//ÅĞ¶ÏÊÇ·ñÁ¬ÁËÎå×ÓÆå
+	//åˆ¤æ–­æ˜¯å¦è¿äº†äº”å­æ£‹
 	bool judge();
 public:
 	const ExMessage* m_msg;
 
-public:	//Êó±ê²Ù×÷µÄ×ø±êºÍÏÂ±ê
+public:	//é¼ æ ‡æ“ä½œçš„åæ ‡å’Œä¸‹æ ‡
 	std::vector<std::vector<ChessPieces>> m_map;
-	int whoOp;			//µ±Ç°ÊÇÄÇ·½ÔÚÏÂÆå
+	int whoOp;			//å½“å‰æ˜¯é‚£æ–¹åœ¨ä¸‹æ£‹
 
 	const int GRID_W;
 

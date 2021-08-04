@@ -18,13 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="controller.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="gamer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="rollback.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,12 +30,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="controller.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="gamer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="rollback.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
