@@ -1,4 +1,5 @@
-﻿#include "map.h"
+﻿#include "..\2048\map.h"
+#include "map.h"
 #include<iostream>
 #include<functional>
 Map::Map(int rows, int cols)
@@ -17,6 +18,10 @@ Map::Map(int rows, int cols)
 	//std::unique_ptr<int* [], void(*)(int* [])> up(new int* [], [](int*[]) {});
 	//std::unique_ptr<int*, void(*)(int**)> up(new int*[rows], [](int** p) {});
 	//std::unique_ptr<int*, std::function<void(int**)>> up(new int* [rows], [](int** p) {});
+}
+
+Map::Map()
+{
 }
 
 void Map::show()
