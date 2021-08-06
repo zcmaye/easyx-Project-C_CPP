@@ -28,6 +28,7 @@
     <ClInclude Include="include\Image.h" />
     <ClInclude Include="include\LineEdit.h" />
     <ClInclude Include="include\pushButton.h" />
+    <ClInclude Include="include\randomGenerator.h" />
     <ClInclude Include="include\Table.h" />
     <ClInclude Include="include\Timer.h" />
     <ClInclude Include="include\Window.h" />
@@ -40,6 +41,7 @@
     <ClCompile Include="source\Image.cpp" />
     <ClCompile Include="source\LineEdit.cpp" />
     <ClCompile Include="source\pushButton.cpp" />
+    <ClCompile Include="source\randomGenerator.cpp" />
     <ClCompile Include="source\Table.cpp" />
     <ClCompile Include="source\Timer.cpp" />
     <ClCompile Include="source\Window.cpp" />

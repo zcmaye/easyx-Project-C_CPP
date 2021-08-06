@@ -1,4 +1,4 @@
-#include "randomGenerator.h"
+﻿#include "../include/randomGenerator.h"
 #include<chrono>
 
 RandomGenerator::RandomGenerator(uint32_t seedValue)
@@ -9,13 +9,13 @@ RandomGenerator::RandomGenerator(uint32_t seedValue)
 
 int RandomGenerator::bounded(int highest)
 {
-    std::uniform_int_distribution intDis(0, highest);
+    std::uniform_int_distribution<int> intDis(0, highest-1);
     return intDis(*m_engine);
 }
 
 int RandomGenerator::bounded(int lowest, int highest)
 {
-    std::uniform_int_distribution intDis(lowest, highest);
+    std::uniform_int_distribution<int> intDis(lowest, highest-1);
     return intDis(*m_engine);
 }
 

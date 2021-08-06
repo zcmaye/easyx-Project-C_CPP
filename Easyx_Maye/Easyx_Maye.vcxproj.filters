@@ -57,6 +57,9 @@
     <ClInclude Include="include\commonutils\TypeDefine.h">
       <Filter>头文件\commonutils</Filter>
     </ClInclude>
+    <ClInclude Include="include\randomGenerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Image.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="source\commonutils\Painter.cpp">
       <Filter>源文件\commonutils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\randomGenerator.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
