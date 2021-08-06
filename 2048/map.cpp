@@ -1,5 +1,5 @@
 ﻿#include "map.h"
-#include<random>
+#include<randomGenerator.h>
 
 Map::Map():m_rows(4),m_cols(4), m_GRIDW(100),m_SPACE(15)
 			,m_map(m_rows)
@@ -11,6 +11,9 @@ Map::Map():m_rows(4),m_cols(4), m_GRIDW(100),m_SPACE(15)
 			m_map[i].push_back(0);
 		}
 	}
+	//开始随机生成两个数
+	generateNumber();
+	generateNumber();
 
 	//设置背景颜色
 	setbkcolor(Color::back);
@@ -51,9 +54,40 @@ void Map::show()
 	}
 }
 
+int Map::rows()
+{
+	return m_rows;
+}
+
+int Map::cols()
+{
+	return m_cols;
+}
+
+std::vector<int>& Map::operator[](int index)
+{
+	return m_map[index];
+}
+
+void Map::generateNumber()
+{
+	while (true)
+	{
+		int r = RandomGenerator::global()->bounded(m_rows);
+		int c = RandomGenerator::global()->bounded(m_cols);
+		if (m_map[r][c] == 0)
+		{
+			m_map[r][c] = generate2or4(5);	//五分之一的概率生成4
+			break;
+		}
+	}
+}
+
 int Map::generate2or4(int probability)
 {
-	
-
-	return 0;
+	if (RandomGenerator::global()->bounded(probability) == 0)
+	{
+		return 4;
+	}
+	return 2;
 }

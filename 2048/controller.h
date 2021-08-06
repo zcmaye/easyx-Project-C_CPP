@@ -5,7 +5,14 @@ class Controller
 public:
 	Controller();
 	void run();
+	void moveup();
+	void movedown();
+	void moveleft();
+	void moveright();
+	void GameControl();
+	void GameWin();
 private:
-	Map m_map;
+	Map map;
+	bool flag;
 };
 

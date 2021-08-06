@@ -23,7 +23,10 @@ class Map
 public:
 	Map();
 	void show();
-
+	int rows();
+	int cols();
+	void generateNumber();
+	std::vector<int>& operator[](int index);
 private:
 	//随机生成2 或 4 probability生成4的概率
 	int  generate2or4(int probability);
