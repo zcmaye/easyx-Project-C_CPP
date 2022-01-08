@@ -13,7 +13,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mineSweeper", "mineSweeper\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2048", "2048\2048.vcxproj", "{96043313-D9DD-4A6D-9998-26FE1A432A90}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudentManagementSystem_CPP", "StudentManagementSystem_CPP\StudentManagementSystem_CPP.vcxproj", "{C2171D33-E8BB-429B-B040-673F15CD181A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudentManagementSystem", "StudentManagementSystem_CPP\StudentManagementSystem_CPP.vcxproj", "{C2171D33-E8BB-429B-B040-673F15CD181A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
