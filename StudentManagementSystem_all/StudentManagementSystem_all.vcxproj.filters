@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\widgets">
+      <UniqueIdentifier>{ca1c2ba0-e6ed-406a-8fad-12ab1e24bb11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\widgets\commonutils">
+      <UniqueIdentifier>{9a403654-8a46-4876-bff8-9b9f282a00e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\widgets">
+      <UniqueIdentifier>{2b587b3c-3a1a-4173-b36a-dffce544bcf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\widgets\commonutils">
+      <UniqueIdentifier>{ccab1ea6-c6c0-4aab-aa8d-1c5dd959c54e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="widgets\commonutils\Color.cpp">
+      <Filter>源文件\widgets\commonutils</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\commonutils\Font.cpp">
+      <Filter>源文件\widgets\commonutils</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ManageMent_gui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\BasicWidget.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\Image.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\LineEdit.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\pushButton.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\randomGenerator.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\Table.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\Timer.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\Window.cpp">
+      <Filter>源文件\widgets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="widgets\commonutils\Color.h">
+      <Filter>头文件\widgets\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\commonutils\Font.h">
+      <Filter>头文件\widgets\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\commonutils\TypeDefine.h">
+      <Filter>头文件\widgets\commonutils</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\BasicWidget.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\Configure.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\Image.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\pushButton.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\LineEdit.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\randomGenerator.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\Table.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\Timer.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\Window.h">
+      <Filter>头文件\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageMent_gui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
