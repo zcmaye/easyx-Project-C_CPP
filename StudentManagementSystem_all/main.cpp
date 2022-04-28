@@ -4,7 +4,7 @@
 #include"widgets/Timer.h"
 int main()
 {
-	Window w(960, 640, /*EW_SHOWCONSOLE | */EW_NOCLOSE);
+	Window w(960, 640, EW_SHOWCONSOLE | EW_NOCLOSE);
 	w.setWindowTitle("学生成绩管理系统");
 
 	ManageMent m;

@@ -51,19 +51,27 @@ public:
 
 	std::vector<PushButton*> menu_btns;
 
-	Table		m_insertTable;
-	LineEdit	m_insertEdit;		//添加学生编辑框
-	PushButton	m_insertBtn;		//添加学生确认按钮
 
+	int opt = 66;		//当前所在页
 	ExMessage m_msg;
 	int m_key;
 public:
 	Image m_bk;
+public://添加学生页
+	Table		m_insertTable;
+	LineEdit	m_insertEdit;		//添加学生编辑框
+	PushButton	m_insertBtn;		//添加学生确认按钮
 public://查找学生页面
 	LineEdit*		searchEdit;
 	PushButton*		searchIdBtn;
 	PushButton*		searchNameBtn;
 	Table*			searchTable;
+public://修改学生页
+	LineEdit	*m_modifyEdit;		//添加学生编辑框
+	std::vector<LineEdit*> m_stuEdits;
+	std::vector<Student>::iterator m_modifyIt; //指向要修改的学生
+	bool haveStu = false;			//是否有要修改的学生
+	bool isfirst = true;					//是不是第一次查找
 public://删除学生页面
 	LineEdit*	delEdit;
 	PushButton* delBtn;

@@ -72,6 +72,24 @@ ManageMent::ManageMent():m_key(0)
 	searchEdit->move((Window::width() - searchEdit->width()) / 2, Window::height() / 3);
 	searchTable->move((Window::width() - searchTable->width()) / 2, Window::height() / 3 + 100);
 
+	//修改页面
+	m_modifyEdit = new LineEdit(0, 0, 200, 30);
+	m_modifyEdit->move((Window::width() - m_modifyEdit->width()) / 2, Window::height() / 3);
+	int width = 120;	//修改页表格宽度
+	int w = width * 6;
+	int vspace = (Window::width() - w) / 2;
+	for (int i = 0; i < 6; i++)
+	{
+		m_stuEdits.push_back(new LineEdit(vspace+ i* width, m_modifyEdit->y()+120, width, 30));
+		m_stuEdits[i]->setCursorHide(true);	//隐藏光标
+	}
+	m_stuEdits[0]->setInputBoxTitle("请输入学号");
+	m_stuEdits[1]->setInputBoxTitle("请输入姓名");
+	m_stuEdits[2]->setInputBoxTitle("请输入班级");
+	m_stuEdits[3]->setInputBoxTitle("请输入数学成绩");
+	m_stuEdits[4]->setInputBoxTitle("请输入语文成绩");
+	m_stuEdits[5]->setInputBoxTitle("请输入英语成绩");
+
 	//删除页面
 	delEdit = new LineEdit(0, 0, 200, 30);;
 	delBtn = new PushButton("删除", 0, 0, 200, 30);
@@ -88,11 +106,10 @@ ManageMent::ManageMent():m_key(0)
 
 void ManageMent::run()
 {
-	int opt = 66;
-
 	Window::beginDraw();
 	while (true)
 	{		
+		//printf("----------\n");
 		Window::clear();
 		drawBackground();
 
@@ -158,16 +175,39 @@ void ManageMent::menu()
 
 void ManageMent::eventLoop()
 {
-	m_insertTable.eventLoop(m_msg);
-	m_insertBtn.eventLoop(m_msg);
-	m_insertEdit.eventLoop(m_msg);
+	if (opt == ShowAll)
+	{
+		m_insertTable.eventLoop(m_msg);
+	}
+	else if (opt == Insert)
+	{
+		
+		m_insertBtn.eventLoop(m_msg);
+		m_insertEdit.eventLoop(m_msg);
+	}
+	else if(opt == Find)
+	{
+		searchIdBtn->eventLoop(m_msg);
+		searchNameBtn->eventLoop(m_msg);
+		searchEdit->eventLoop(m_msg);
+	}
+	else if (opt == Erase)
+	{
+		delBtn->eventLoop(m_msg);
+		delEdit->eventLoop(m_msg);
+	}
+	else if (opt == Modify)
+	{
+		m_modifyEdit->eventLoop(m_msg);
 
-	searchIdBtn->eventLoop(m_msg);
-	searchNameBtn->eventLoop(m_msg);
-	searchEdit->eventLoop(m_msg);
-
-	delBtn->eventLoop(m_msg);
-	delEdit->eventLoop(m_msg);
+		if (haveStu)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				m_stuEdits[i]->eventLoop(m_msg);
+			}
+		}
+	}
 }
 
 void ManageMent::drawBackground()
@@ -223,7 +263,7 @@ void ManageMent::insert()
 	m_insertEdit.show();
 	m_insertBtn.show();
 	settextstyle(30, 0, "黑体");
-	outtextxy(m_insertEdit.x()-50, m_insertEdit.y()-150, "请依次输入<学号,姓名,班级,数学,语文,英语>");
+	outtextxy(m_insertEdit.x()-50, m_insertEdit.y()-150, "请依次输入<学号 姓名 班级 数学 语文 英语>");
 
 	//点一次会触发多次，所以用定时器来延迟一下
 	if (m_insertBtn.isClicked() && Timer::startTimer(200,0))
@@ -246,6 +286,7 @@ void ManageMent::insert()
 		m_insertEdit.clear();
 		
 		printf("插入成功啦\n");
+		updateTableData();
 	}
 
 	//m_insertEdit.updateText();
@@ -301,7 +342,98 @@ void ManageMent::modify()
 	settextstyle(50, 0, "黑体");
 	char title[50] = "修改学生";
 	outtextxy((Window::width() - textwidth(title)) / 2, 50, title);
+
+	m_modifyEdit->show();
+	for (int i = 0; i < 6; i++)
+	{
+		m_stuEdits[i]->show();
+	}
 	//略
+	settextstyle(30, 0, "黑体");
+	outtextxy(m_modifyEdit->x()-80, m_modifyEdit->y() - 80, "请输入需要修改的学生学号");
+	//settextstyle(18, 0, "黑体");
+	//outtextxy(m_stuEdits[0]->x(), m_stuEdits[0]->y()-40, "点击对应格子即可修改");
+
+
+	if (m_modifyEdit->textChanged())
+	{
+		printf("sdfsfd");
+		std::string res =m_modifyEdit->text();
+		Student stu;
+		std::stringstream stream(res);
+		stream >> stu.number;
+		//stu.name = res;
+
+		auto findIt = std::find(vec_stu.begin(), vec_stu.end(), stu);
+		
+		if (findIt != vec_stu.end())
+		{
+			m_modifyIt = findIt;
+			haveStu = true;
+			cout << "找到咯~ ";
+			//searchTable->insert(findIt->formatInfo());
+			m_stuEdits[0]->setText(to_string(findIt->number));
+			m_stuEdits[1]->setText(findIt->name);
+			m_stuEdits[2]->setText(findIt->grade);
+			m_stuEdits[3]->setText(to_string(findIt->math));
+			m_stuEdits[4]->setText(to_string(findIt->chinese));
+			m_stuEdits[5]->setText(to_string(findIt->english));
+
+			findIt->display();
+		}
+		else {
+			haveStu = false;
+
+		}
+	}
+	
+	if (haveStu)
+	{
+		//如果修改了学生信息
+		for (int i = 0; i < 6; i++)
+		{
+			if (m_stuEdits[i]->textChanged())
+			{
+				switch (i)
+				{
+				case 0:		//修改了学号
+					m_modifyIt->number = atoi(m_stuEdits[i]->text().data());
+					break;
+				case 1:		//修改了姓名
+					m_modifyIt->name	= m_stuEdits[i]->text();
+					break;
+				case 2:		//修改了班级
+					m_modifyIt->grade = m_stuEdits[i]->text();
+					break;
+				case 3:		//修改了数学
+					m_modifyIt->math = atoi(m_stuEdits[i]->text().data());
+					break;
+				case 4:		//修改了语文
+					m_modifyIt->chinese = atoi(m_stuEdits[i]->text().data());
+					printf("修改了语文\n");
+					break;
+				case 5:		//修改了英语
+					m_modifyIt->english = atoi(m_stuEdits[i]->text().data());
+					break;
+				}
+				updateTableData();
+			}
+		}
+	}
+	else if(!isfirst)
+	{
+		settextstyle(18, 0, "黑体");
+		setfillcolor(RGB(194, 195, 201));
+		solidrectangle(m_stuEdits[0]->x(), m_stuEdits[0]->y(), m_stuEdits[0]->x() + 6 * 120, m_stuEdits[0]->y() + 30);
+		outtextxy(m_stuEdits[0]->x(), m_stuEdits[0]->y()+5, "未找到你要修改的学生，请查证后重试~");
+	}
+	else
+	{
+		settextstyle(18, 0, "黑体");
+		setfillcolor(RGB(194, 195, 201));
+		solidrectangle(m_stuEdits[0]->x(), m_stuEdits[0]->y(), m_stuEdits[0]->x() + 6 * 120, m_stuEdits[0]->y() + 30);
+		outtextxy(m_stuEdits[0]->x(), m_stuEdits[0]->y() + 5, "请在上方输入框中输入要查找的学生学号，然后点击此处信息直接编辑");
+	}
 }
 
 void ManageMent::find()

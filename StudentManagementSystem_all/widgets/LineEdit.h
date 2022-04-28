@@ -13,8 +13,10 @@ public:
 	//弹出数据输入框
 	void popInputBox();
 	void setInputBoxTitle(const std::string& title);
+	void setText(const std::string&text);
 	std::string text();
 	void clear();
+	void setCursorHide(bool isHide);
 	//文本是否改变了
 	bool textChanged();
 private:
@@ -23,7 +25,7 @@ private:
 	int textw;
 
 	std::string m_title;	//行编辑器弹出窗标题
-
+	bool m_hideCursor = false;		//是否显示光标
 	bool m_isPopUp;	//是否弹出
 };
 

@@ -15,10 +15,12 @@ void LineEdit::show()
 	setfillcolor(RGB(232, 232, 236));
 	fillrectangle(m_x, m_y, m_x+m_w, m_y+m_h);
 
-	//闪烁的小竖线
-	setlinecolor(RED);
-	line(m_x + textw + 2, m_y + 2, m_x + textw + 2, m_y + m_h - 2);
-
+	if (!m_hideCursor)
+	{
+		//闪烁的小竖线
+		setlinecolor(RED);
+		line(m_x + textw + 2, m_y + 2, m_x + textw + 2, m_y + m_h - 2);
+	}
 	//把文字输出到edit上
 	outtextxy(m_x, m_y+(m_h - textheight(m_text.c_str())) / 2,m_text.c_str());
 
@@ -51,6 +53,12 @@ void LineEdit::setInputBoxTitle(const std::string& title)
 	m_title = title;
 }
 
+void LineEdit::setText(const std::string& text)
+{
+	m_text = text;
+	textw = ::textwidth(m_text.c_str());
+}
+
 std::string  LineEdit::text()
 {
 	return m_text;
@@ -60,6 +68,11 @@ void LineEdit::clear()
 {
 	m_text.clear();
 	textw = 0;
+}
+
+void LineEdit::setCursorHide(bool isHide)
+{
+	m_hideCursor = isHide;
 }
 
 bool LineEdit::textChanged()
